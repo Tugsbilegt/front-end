@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Tasks</title>
+</head>
+<body>
+    
+    <div>
+        <input type="number" id="num1" value="5">
+        <input type="number" id="num2" value="2">
+        <input type="number" id="num3" value="8">
+        <input type="number" id="num4" value="1">
+        <button onclick="min()">Min</button>
+        <p id="minResult"></p>
+    </div>
+    
+    <div>
+        <button onclick="Sum()">Sum</button>
+        <p id="sumResult"></p>
+    </div>
+    
+    <div>
+        <button onclick="Odd()">odd</button>
+    </div>
+    
+    <div>
+        <input type="number" id="primeInput" value="7">
+        <button onclick="checkPrime()">Prime</button>
+        <p id="primeResult"></p>
+    </div>
+
+    <script>
+        function min() {
+            const num1 = Number(document.getElementById('num1').value);
+            const num2 = Number(document.getElementById('num2').value);
+            const num3 = Number(document.getElementById('num3').value);
+            const num4 = Number(document.getElementById('num4').value);
+            const min = Math.min(num1, num2, num3, num4);
+            document.getElementById('minResult').textContent = 'min: ' + min;
+        }
+
+        function Sum() {
+            let sum = 0;
+            for (let i = 1; i <= 10; i++) {
+                if (i % 2 === 0) {
+                    sum += i;
+                }
+            }
+            document.getElementById('sumResult').textContent = 'sum:' + sum;
+        }
+
+        function Odd() {
+            for (let i = 1; i <= 20; i++) {
+                if (i % 2 !== 0) {
+                    console.log(i);
+                }
+            }
+        }
+
+        function checkPrime() {
+            const number = parseInt(document.getElementById('primeInput').value);
+            let isPrime = true;
+            
+            if (number <= 1) {
+                isPrime = false;
+            } else {
+                for (let i = 2; i <= Math.sqrt(number); i++) {
+                    if (number % i === 0) {
+                        isPrime = false;
+                        break;
+                    }
+                }
+            }
+            
+            document.getElementById('primeResult').textContent = 
+                number + ' is ' + (isPrime ? 'yes' : 'no');
+        }
+    </script>
+</body>
+</html>

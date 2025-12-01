@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <title>tugsuugin ynaglal</title>
+</head>
+<body>
+
+<h2>4 tooni baga</h2>
+
+<input type="number" id="n1" placeholder="1-р тоо">
+<input type="number" id="n2" placeholder="2-р тоо">
+<input type="number" id="n3" placeholder="3-р тоо">
+<input type="number" id="n4" placeholder="4-р тоо">
+
+<button onclick="findMin()">tootsool malaa</button>
+    
+<p id="result"></p>
+
+<script>
+function findMin() {
+    let a = Number(document.getElementById('n1').value);
+    let b = Number(document.getElementById('n2').value);
+    let c = Number(document.getElementById('n3').value);
+    let d = Number(document.getElementById('n4').value);
+
+    let minValue = Math.min(a, b, c, d);
+
+    document.getElementById('result').innerText =
+        "hamgiin bga too: " + minValue;
+}
+</script>
+
+</body>
+</html>

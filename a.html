@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="a">
+    <input type="number" name="" id="b">
+    <input type="number" id="c">
+    <input type="number" name="" id="d">
+    <input type="number" id="n">
+    <button onclick="min(a,b,c,d)">min</button>
+    <p id="min"></p>
+    <button onclick="even()">even</button>
+    <p id="even"></p>
+    <button onclick="odd()">odd</button>
+    <p id="odd"></p>
+    <button onclick="prime()">prime</button>
+    <p id="prime"></p>
+    <button onclick="clear()">clear</button>
+</body>
+<script>
+
+let a = Number(document.getElementById("a").value);
+let b = Number(document.getElementById("b").value);
+let c = Number(document.getElementById("c").value);
+let d = Number(document.getElementById("d").value);
+
+function min(a, b, c, d) {
+    const min = Math.min(a,b,c,d);
+    document.getElementById('min').textContent = min;
+    return min;
+}
+
+function even() {
+    let s = 0;
+    for (let i=1;i<=10;i++) {
+        if (i%2===0) {
+            s += i;
+        }
+    }
+    alert(s);
+    document.getElementById('even').textContent = s;
+    return s;
+}
+
+function odd() {
+    let r=0;
+    for (let i=0; i<=20;i++) {
+        if (i%2==1) {
+            document.getElementById('odd').textContent = i;
+        }
+    }
+    console.log(r);
+    return r;
+}
+function prime() {
+    let n = Number(document.getElementById("n").value);
+    let p =true;
+        for (let i=2 ; i<n ; i++) {
+            if (n%i==0){
+                p = false;
+                break;
+            }
+        }
+        alert(p);
+        document.getElementById('prime').textContent = p;
+    return p;
+}
+
+    </script>
+</html>
